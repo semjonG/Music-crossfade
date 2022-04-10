@@ -17,20 +17,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="2" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="IZn-ET-T9K">
-                                <rect key="frame" x="51" y="578" width="313" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="2" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="IZn-ET-T9K">
+                                <rect key="frame" x="18" y="464" width="378" height="104"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <imageReference key="minimumValueImage" image="2.square.fill" catalog="system" symbolScale="large"/>
                                 <imageReference key="maximumValueImage" image="10.square.fill" catalog="system" symbolScale="large"/>
                                 <color key="minimumTrackTintColor" systemColor="systemPinkColor"/>
                                 <color key="maximumTrackTintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="0.61366140605598096" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" systemColor="systemPinkColor"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ao1-2n-a5T"/>
+                                </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcg-Lk-vDP">
+                                <rect key="frame" x="20" y="607" width="136" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="OQv-6e-LZX"/>
+                                    <constraint firstAttribute="height" constant="56" id="VHr-fj-NKK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="  add song 1">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectFirstFileTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVU-G3-l3o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KL-X4-s29">
+                                <rect key="frame" x="258" y="608" width="136" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="LTj-gO-1E7"/>
+                                    <constraint firstAttribute="height" constant="56" id="Zai-bl-yd3"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="  add song 2">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="selectSecondFileTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H8n-9Y-lUR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y09-Tm-l3N">
+                                <rect key="frame" x="139" y="783" width="136" height="56"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="8ac-i0-pZd"/>
+                                    <constraint firstAttribute="height" constant="56" id="PlI-f7-Z6T"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="   Play">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WFZ-qg-ecW"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="crossfade" translatesAutoresizingMaskIntoConstraints="NO" id="Foc-cD-Cut">
+                                <rect key="frame" x="20" y="124" width="374" height="283"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="283" id="78A-Tl-BZU"/>
+                                    <constraint firstAttribute="width" constant="374" id="lu2-XO-0Vq"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tcg-Lk-vDP" firstAttribute="top" secondItem="IZn-ET-T9K" secondAttribute="bottom" constant="40" id="1LU-So-nub"/>
+                            <constraint firstItem="IZn-ET-T9K" firstAttribute="top" secondItem="Foc-cD-Cut" secondAttribute="bottom" constant="57" id="4RG-rF-ZUe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2KL-X4-s29" secondAttribute="trailing" constant="20" id="4sx-OZ-b3v"/>
+                            <constraint firstItem="Y09-Tm-l3N" firstAttribute="top" secondItem="tcg-Lk-vDP" secondAttribute="bottom" constant="120" id="55W-Br-eCK"/>
+                            <constraint firstItem="Foc-cD-Cut" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="8Gk-e1-CTE"/>
+                            <constraint firstItem="Foc-cD-Cut" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bvv-zn-D2g"/>
+                            <constraint firstItem="Foc-cD-Cut" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="GSH-IL-HEl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Foc-cD-Cut" secondAttribute="trailing" constant="20" id="Qd4-Ho-ZVk"/>
+                            <constraint firstItem="tcg-Lk-vDP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Szm-Hl-x0r"/>
+                            <constraint firstItem="2KL-X4-s29" firstAttribute="top" secondItem="IZn-ET-T9K" secondAttribute="bottom" constant="41" id="WMc-XX-GAX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IZn-ET-T9K" secondAttribute="trailing" constant="20" id="WXG-Sc-cTg"/>
+                            <constraint firstItem="Y09-Tm-l3N" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="a1h-7P-EN8"/>
+                            <constraint firstItem="IZn-ET-T9K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="exe-Va-HXA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Y09-Tm-l3N" secondAttribute="bottom" constant="23" id="gG0-OI-3mO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addSong1Button" destination="tcg-Lk-vDP" id="r7V-8z-Wq5"/>
+                        <outlet property="addSong2Button" destination="2KL-X4-s29" id="Gck-wY-wSN"/>
+                        <outlet property="crossFadeSlider" destination="IZn-ET-T9K" id="Hm2-DD-sS6"/>
+                        <outlet property="playButton" destination="Y09-Tm-l3N" id="Laj-wX-P9n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -40,6 +119,9 @@
     <resources>
         <image name="10.square.fill" catalog="system" width="128" height="114"/>
         <image name="2.square.fill" catalog="system" width="128" height="114"/>
+        <image name="crossfade" width="617" height="478"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

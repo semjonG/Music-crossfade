@@ -18,5 +18,5 @@ struct AudioModel {
     
     var crossFadeValue: Double = 0.0
     
-    let alertMessage = "Something's wrong. Probably you didn't choose one or both songs."
+    let alertMessage = "Please, choose your songs and the value of the crossfade!"
 }

@@ -25,13 +25,51 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
     
     @IBOutlet weak var crossFadeSlider: UISlider!
     
+    @IBOutlet weak var addSong1Button: UIButton!
+    
+    @IBOutlet weak var addSong2Button: UIButton!
+    
+    @IBOutlet weak var playButton: UIButton!
+    
+    //MARK: - @IBActions
+    
+    @IBAction func selectFirstFileTouched(_ sender: Any) {
+        selectFirstFile()
+    }
+    
+    @IBAction func selectSecondFileTouched(_ sender: Any) {
+        selectSecondFile()
+    }
+    
+    @IBAction func sliderValueChanged(_ sender: Any) {
+        audioModel.crossFadeValue = Double(crossFadeSlider.value)
+    }
+    
+    @IBAction func playTouched(_ sender: Any) {
+        prepareForFirstAudio()
+        prepareForSecondAudio()
+        if firstAudioPlayer != nil && secondAudioPlayer != nil {
+            startAudio()
+        } else {
+            alertInitialize(message: audioModel.alertMessage)
+        }
+    }
+    
     //MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        elementsCustomisation()
     }
     
     //MARK: - methods
+    
+    private func elementsCustomisation() {
+        addSong1Button.layer.cornerRadius = 26
+        addSong2Button.layer.cornerRadius = 26
+        playButton.layer.cornerRadius = 26
+    }
     
     private func selectFirstFile() {
         firstDocumentPickerController.delegate = self
@@ -67,7 +105,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
             }
             return
         }
-        
     }
     
     private func prepareForSecondAudio() {
@@ -97,35 +134,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
     }
     
     private func alertInitialize(message: String) {
-        let alert = UIAlertController(title: "Oops..😱", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Okay!", comment: "Default action"), style: .default, handler: { _ in
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"OK\" alert occured.")
         }))
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    //MARK: - @IBActions
-    
-    @IBAction func selectFirstFileTouched(_ sender: Any) {
-        selectFirstFile()
-    }
-    
-    @IBAction func selectSecondFileTouched(_ sender: Any) {
-        selectSecondFile()
-    }
-    
-    @IBAction func sliderValueChanged(_ sender: Any) {
-        audioModel.crossFadeValue = Double(crossFadeSlider.value)
-    }
-    
-    @IBAction func playTouched(_ sender: Any) {
-        prepareForFirstAudio()
-        prepareForSecondAudio()
-        if firstAudioPlayer != nil && secondAudioPlayer != nil {
-            startAudio()
-        } else {
-            alertInitialize(message: audioModel.alertMessage)
-        }
     }
 }
 
