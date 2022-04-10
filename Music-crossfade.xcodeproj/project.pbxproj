@@ -65,11 +65,11 @@
 		042E82FF28005F7800E22F83 /* Music-crossfade */ = {
 			isa = PBXGroup;
 			children = (
-				042E831828038BA100E22F83 /* Support */,
-				042E831728038B7500E22F83 /* Model */,
 				042E831628038B5B00E22F83 /* App */,
+				042E831728038B7500E22F83 /* Model */,
 				042E830428005F7800E22F83 /* ViewController.swift */,
 				042E830628005F7800E22F83 /* Main.storyboard */,
+				042E831828038BA100E22F83 /* Support */,
 			);
 			path = "Music-crossfade";
 			sourceTree = "<group>";
