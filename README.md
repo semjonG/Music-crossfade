@@ -22,6 +22,8 @@
 
 ## Выполнено
 - MVC
-- third party lib Cephalopod https://github.com/evgenyneu/Cephalopod
+- UIKit
+- AVFAudio
+- third party lib "Cephalopod" https://github.com/evgenyneu/Cephalopod
   
   <img width="256" alt="example" src="https://raw.githubusercontent.com/semjonG/Music-crossfade/main/screen.png"><br>
