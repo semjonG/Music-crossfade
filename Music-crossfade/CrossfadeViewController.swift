@@ -9,7 +9,7 @@ import UIKit
 import AVFAudio
 import Cephalopod
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIDocumentPickerDelegate {
+final class CrossfadeViewController: UIViewController, UINavigationControllerDelegate {
     
     private var audioModel = AudioModel()
     private var firstAudioPlayer: AVAudioPlayer!
@@ -45,12 +45,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
     }
     
     @IBAction func playTouched(_ sender: Any) {
-        prepareForFirstAudio()
-        prepareForSecondAudio()
+        prepareToPlayFirstAudio()
+        prepareToPlaySecondAudio()
         if firstAudioPlayer != nil && secondAudioPlayer != nil {
             startAudio()
         } else {
-            alertInitialize(message: audioModel.alertMessage)
+            showAlert(message: audioModel.alertMessage)
         }
     }
     
@@ -59,42 +59,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        elementsCustomisation()
+        configureElements()
     }
     
-    //MARK: - methods
+    //MARK: - Private
     
-    private func elementsCustomisation() {
+    private func configureElements() {
         addSong1Button.layer.cornerRadius = 26
         addSong2Button.layer.cornerRadius = 26
         playButton.layer.cornerRadius = 26
     }
     
-    private func selectFirstFile() {
-        firstDocumentPickerController.delegate = self
-        self.present(firstDocumentPickerController, animated: true, completion: nil)
-    }
-    
-    private func selectSecondFile() {
-        secondDocumentPickerController.delegate = self
-        self.present(secondDocumentPickerController, animated: true, completion: nil)
-    }
-    
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        if controller == firstDocumentPickerController {
-            guard let firstURL = urls.first else {
-                return
-            }
-            audioModel.track1URL = firstURL
-        } else {
-            guard let secondURL = urls.first else {
-                return
-            }
-            audioModel.track2URL = secondURL
-        }
-    }
-    
-    private func prepareForFirstAudio() {
+    private func prepareToPlayFirstAudio() {
         guard audioModel.track1URL == nil else {
             do {
                 firstAudioPlayer = try AVAudioPlayer(contentsOf: audioModel.track1URL!)
@@ -106,7 +82,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
         }
     }
     
-    private func prepareForSecondAudio() {
+    private func prepareToPlaySecondAudio() {
         guard audioModel.track2URL == nil else {
             do {
                 secondAudioPlayer = try AVAudioPlayer(contentsOf: audioModel.track2URL!)
@@ -132,7 +108,19 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
         }
     }
     
-    private func alertInitialize(message: String) {
+    //MARK: - Navigation
+    
+    private func selectFirstFile() {
+        firstDocumentPickerController.delegate = self
+        self.present(firstDocumentPickerController, animated: true, completion: nil)
+    }
+    
+    private func selectSecondFile() {
+        secondDocumentPickerController.delegate = self
+        self.present(secondDocumentPickerController, animated: true, completion: nil)
+    }
+    
+    private func showAlert(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"OK\" alert occured.")
@@ -140,5 +128,22 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIDocume
         self.present(alert, animated: true, completion: nil)
     }
 }
+ 
+//MARK: - UIDocumentPickerDelegate
 
-
+extension CrossfadeViewController: UIDocumentPickerDelegate {
+    
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        if controller == firstDocumentPickerController {
+            guard let firstURL = urls.first else {
+                return
+            }
+            audioModel.track1URL = firstURL
+        } else {
+            guard let secondURL = urls.first else {
+                return
+            }
+            audioModel.track2URL = secondURL
+        }
+    }
+}

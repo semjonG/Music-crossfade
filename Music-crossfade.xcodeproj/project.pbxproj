@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		042E830128005F7800E22F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E830028005F7800E22F83 /* AppDelegate.swift */; };
 		042E830328005F7800E22F83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E830228005F7800E22F83 /* SceneDelegate.swift */; };
-		042E830528005F7800E22F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E830428005F7800E22F83 /* ViewController.swift */; };
+		042E830528005F7800E22F83 /* CrossfadeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E830428005F7800E22F83 /* CrossfadeViewController.swift */; };
 		042E830828005F7800E22F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042E830628005F7800E22F83 /* Main.storyboard */; };
 		042E830A28005F7900E22F83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042E830928005F7900E22F83 /* Assets.xcassets */; };
 		042E830D28005F7900E22F83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042E830B28005F7900E22F83 /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 		042E82FD28005F7800E22F83 /* Music-crossfade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music-crossfade.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		042E830028005F7800E22F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		042E830228005F7800E22F83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		042E830428005F7800E22F83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		042E830428005F7800E22F83 /* CrossfadeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossfadeViewController.swift; sourceTree = "<group>"; };
 		042E830728005F7800E22F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		042E830928005F7900E22F83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		042E830C28005F7900E22F83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 			children = (
 				042E831628038B5B00E22F83 /* App */,
 				042E831728038B7500E22F83 /* Model */,
-				042E830428005F7800E22F83 /* ViewController.swift */,
+				042E830428005F7800E22F83 /* CrossfadeViewController.swift */,
 				042E830628005F7800E22F83 /* Main.storyboard */,
 				042E831828038BA100E22F83 /* Support */,
 			);
@@ -233,7 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042E830528005F7800E22F83 /* ViewController.swift in Sources */,
+				042E830528005F7800E22F83 /* CrossfadeViewController.swift in Sources */,
 				042E830128005F7800E22F83 /* AppDelegate.swift in Sources */,
 				042E83152803575E00E22F83 /* AudioModel.swift in Sources */,
 				042E830328005F7800E22F83 /* SceneDelegate.swift in Sources */,
@@ -388,7 +388,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8RR9M64TNW;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Music-crossfade/Info.plist";
+				INFOPLIST_FILE = "Music-crossfade/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -418,7 +418,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8RR9M64TNW;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Music-crossfade/Info.plist";
+				INFOPLIST_FILE = "Music-crossfade/Support/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
