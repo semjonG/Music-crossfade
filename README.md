@@ -26,4 +26,13 @@
 - AVFAudio
 - third party lib "Cephalopod" https://github.com/evgenyneu/Cephalopod
   
-  <img width="256" alt="example" src="https://raw.githubusercontent.com/semjonG/Music-crossfade/main/screen.png"><br>
+  <table>
+  <tr>
+    <td>Main screen</td>
+    <td>Adding songs from iCloud</td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/semjonG/Music-crossfade/main/screen1.png"></td>
+    <td><img src="https://raw.githubusercontent.com/semjonG/Music-crossfade/main/screen2.png"></td>
+  </tr>
+  <tr>
