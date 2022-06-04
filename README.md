@@ -23,8 +23,11 @@
 ## Выполнено
 - MVC
 - UIKit
+- Storyboard
 - AVFAudio
 - third party lib "Cephalopod" https://github.com/evgenyneu/Cephalopod
+- не забываем про "pod install" 
+- в репозитории добавил 2 коротких трека mp3 для тестирования
   
   <table>
   <tr>
