@@ -27,7 +27,7 @@
 - AVFAudio
 - third party lib "Cephalopod" https://github.com/evgenyneu/Cephalopod
 - не забываем про "pod install" 
-- в репозитории добавил 2 коротких трека mp3 для тестирования
+- в репозитории добавил 2 коротких трека mp3 для тестирования (явно ощущается на 10 сек)
   
   <table>
   <tr>
